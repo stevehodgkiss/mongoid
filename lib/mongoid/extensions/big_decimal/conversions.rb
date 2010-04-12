@@ -7,6 +7,7 @@ module Mongoid #:nodoc:
       module Conversions #:nodoc:
         # Get the string as a +BigDecimal+
         def get(value)
+          return nil if value.blank?
           ::BigDecimal.new(value)
         end
         # Set the value in the hash as a string.

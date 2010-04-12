@@ -11,6 +11,15 @@ describe Mongoid::Extensions::BigDecimal::Conversions do
     it "converts the string to a big decimal" do
       BigDecimal.get("123456.789").should == number
     end
+    
+    context "when string is nil" do
+      
+      it "returns nil" do
+        BigDecimal.get(nil).should == nil
+      end
+      
+    end
+    
   end
 
   describe "#set" do
